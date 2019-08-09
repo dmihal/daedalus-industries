@@ -1,0 +1,24 @@
+version: '3'
+services:
+  site:
+    build:
+      context: ./
+    environment:
+      ROOT_URL: "https://${DOMAIN}"
+      MONGO_URL: "${MONGO_URL}"
+      MONGO_OPLOG_URL: "${MONGO_OPLOG}"
+      METEOR_SETTINGS: "${METEOR_SETTINGS}"
+      PORT: 80
+
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - site
+    restart: always
+    environment:
+      DOMAINS: '${DOMAIN} -> http://site'
+      STAGE: 'production'
+      WEBSOCKET: 'true'

@@ -1,0 +1,38 @@
+{
+  "name": "meteor-react-boilerplate",
+  "author": "David Mihal",
+  "scripts": {
+    "start": "meteor run --settings settings.json",
+    "build": "meteor build --architecture=os.linux.x86_64 ./build/site.tar.gz",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.jsx",
+      "server": "server/main.js"
+    }
+  },
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/runtime": "^7.3.4",
+    "@material-ui/core": "^4.3.1",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/styles": "^4.3.0",
+    "classnames": "^2.2.6",
+    "meteor-node-stubs": "^0.4.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "5.3",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3"
+  }
+}
