@@ -1,1 +1,1 @@
-export default from './material-kit-react';
+export * from './material-kit-react';

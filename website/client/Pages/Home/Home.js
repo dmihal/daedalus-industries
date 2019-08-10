@@ -27,7 +27,7 @@ const HomePage = () => {
       <Header
         color="transparent"
         routes={[]}
-        brand="Material Kit React"
+        brand="Daedalus Industries"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
