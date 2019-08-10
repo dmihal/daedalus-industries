@@ -3,7 +3,7 @@
   "author": "David Mihal",
   "scripts": {
     "start": "meteor run --settings settings.json",
-    "build": "meteor build --architecture=os.linux.x86_64 ./build/site.tar.gz",
+    "build": "meteor build --architecture=os.linux.x86_64 ./build/",
     "visualize": "meteor --production --extra-packages bundle-visualizer"
   },
   "meteor": {

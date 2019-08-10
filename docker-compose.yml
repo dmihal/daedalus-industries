@@ -1,0 +1,30 @@
+version: '3'
+services:
+  site:
+    build:
+      context: ./website
+    environment:
+      ROOT_URL: "https://${DOMAIN}"
+      MONGO_URL: "mongodb://site:${MONGO_PW}@website-shard-00-00-kbcvc.mongodb.net:27017,website-shard-00-01-kbcvc.mongodb.net:27017,website-shard-00-02-kbcvc.mongodb.net:27017/test?ssl=true&replicaSet=website-shard-0&authSource=admin&retryWrites=true&w=majority"
+      MONGO_OPLOG_URL: "mongodb://oplog:${MONGO_PW}@website-shard-00-00-kbcvc.mongodb.net:27017,website-shard-00-01-kbcvc.mongodb.net:27017,website-shard-00-02-kbcvc.mongodb.net:27017/local?ssl=true&replicaSet=website-shard-0&authSource=admin&retryWrites=true&w=majority"
+      METEOR_SETTINGS: "${METEOR_SETTINGS}"
+      PORT: 80
+
+  wallet:
+    build:
+      context: ./wallet
+      args:
+         - INFURA_KEY=${INFURA_KEY}
+
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - site
+    restart: always
+    environment:
+      DOMAINS: '${DOMAIN} -> http://site, wallet.${DOMAIN} -> http://wallet'
+      STAGE: 'production'
+      WEBSOCKET: 'true'
