@@ -15,9 +15,9 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { defaultFont } from "/client/material-kit-react";
+import { defaultFont } from '/client/material-kit-react';
 
-import tooltip from "/client/material-kit-react/tooltipsStyle.jsx";
+import tooltip from '/client/material-kit-react/tooltipsStyle.jsx';
 
 const headerLinksStyle = theme => ({
   list: {
@@ -38,7 +38,7 @@ const headerLinksStyle = theme => ({
     width: "auto",
     margin: "0",
     padding: "0",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('xs')]: {
       width: "100%",
       "&:after": {
         width: "calc(100% - 30px)",
@@ -69,7 +69,7 @@ const headerLinksStyle = theme => ({
       color: "inherit",
       background: "rgba(200, 200, 200, 0.2)"
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('xs')]: {
       width: "calc(100% - 30px)",
       marginLeft: "15px",
       marginBottom: "8px",
