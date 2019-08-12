@@ -2010,6 +2010,11 @@ react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
   integrity sha512-tJBzzzIgnnRfEm046qRcURvwQnZVXmuCbscxUO5RWrGTXpon2d4c8mI0D8WE6ydVIm29JiLB6+RslkIvym9Rjw==
 
+react-meteor-hooks@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/react-meteor-hooks/-/react-meteor-hooks-0.3.1.tgz#21557e6af181a301ccdd8f06eb3d15e3dc4fb08b"
+  integrity sha512-HRpoG3ulHpL2YexQH2uzpvLUFBAZ2MCTfxDHdQF+Fa03E7EgZyPy8khnmOIQU0wKI+DgXyueGUAC9nV5zK5nuA==
+
 react-router-dom@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.0.1.tgz#ee66f4a5d18b6089c361958e443489d6bab714be"
