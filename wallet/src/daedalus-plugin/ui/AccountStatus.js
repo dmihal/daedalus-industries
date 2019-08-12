@@ -7,24 +7,35 @@ export default class AccountStatus extends Component {
     this.plugin = props.plugin;
     this.state = {
       user: null,
+      loaded: false,
     };
   }
 
+  async componentDidMount() {
+    const user = await this.plugin.bridge.call('getUser');
+    this.setState({ user, loaded: true })
+  }
+
   render() {
-    const { user } = this.state;
-    const redirectUrl = `${window.location.origin}/register-account`;
-    return this.state.user ? (
+    const { user, loaded } = this.state;
+
+    let content = null
+    if (!loaded) {
+      content = "Loading...";
+    } else if (user) {
+      content = `Welcome, ${user.profile.name}`;
+    } else {
+      content = (
+        <div>
+          Visit <a href="https://daedalus.industries">daedalus.industries</a> to log in
+        </div>
+      );
+    }
+
+    return (
       <div className={classes.statusBar}>
-        <div className={classes.avatar} style={{ backgroundImage: `url(${user.picture})` }} />
-        <div className={classes.name}>{user.name}</div>
+        {content}
       </div>
-    ) : (
-      <a
-        className={classes.loginBtn}
-        href={`${this.plugin.identityServer}/auth?redirect=${encodeURIComponent(redirectUrl)}`}
-      >
-        Log In with Facebook
-      </a>
     )
   }
 }

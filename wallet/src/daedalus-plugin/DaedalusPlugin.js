@@ -1,5 +1,6 @@
 import AccountRegisterPage from './ui/AccountRegisterPage';
 import AccountStatus from './ui/AccountStatus';
+import Bridge from './Bridge';
 
 export default class DaedalusPlugin {
   initializePlugin(pluginContext) {
@@ -7,5 +8,7 @@ export default class DaedalusPlugin {
 
     pluginContext.addPage('/register-account', AccountRegisterPage);
     pluginContext.addElement('home-top', AccountStatus);
+
+    this.bridge = new Bridge();
   }
 }

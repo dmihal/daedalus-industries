@@ -25,6 +25,7 @@ const exchange = new Exchange({
 
 const BurnerWallet = () =>
   <BurnerUI
+    title="Daedalus Industries"
     core={core}
     assets={[xdai, dai, eth]}
     plugins={[exchange, new DaedalusPlugin()]}
