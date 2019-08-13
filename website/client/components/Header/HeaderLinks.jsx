@@ -80,6 +80,7 @@ const HeaderLinks = ({ classes }) => {
         <Button
           color="transparent"
           className={classes.navLink}
+          onClick={() => Meteor.loginWithTwitter()}
         >
           Sign In with Twitter
         </Button>
