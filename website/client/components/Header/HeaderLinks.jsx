@@ -34,20 +34,32 @@ import headerLinksStyle from './headerLinksStyle.jsx';
 const HeaderLinks = ({ classes }) => {
   const user = useCurrentUser();
 
-  if (user) {
-    return (
-      <List className={classes.list}>
+  return (
+    <List className={classes.list}>
+      <ListItem className={classes.listItem}>
+        <Button
+          color="transparent"
+          className={classes.navLink}
+          component="a"
+          href="https://wallet.daedalus.industries"
+        >
+          Wallet
+        </Button>
+      </ListItem>
+
+      {!user && (
         <ListItem className={classes.listItem}>
           <Button
             color="transparent"
             className={classes.navLink}
-            component="a"
-            href="https://wallet.daedalus.industries"
+            onClick={() => Meteor.loginWithGithub()}
           >
-            Wallet
+            Sign In with GitHub
           </Button>
         </ListItem>
+      )}
 
+      {user && (
         <ListItem className={classes.listItem}>
           <CustomDropdown
             noLiPadding
@@ -59,7 +71,7 @@ const HeaderLinks = ({ classes }) => {
             dropdownList={[
               <a
                 href="#"
-                onClick={e => {
+                onClick={(e) => {
                   e.preventDefault();
                   Meteor.logout();
                 }}
@@ -70,30 +82,7 @@ const HeaderLinks = ({ classes }) => {
             ]}
           />
         </ListItem>
-      </List>
-    );
-  }
-
-  return (
-    <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          className={classes.navLink}
-          onClick={() => Meteor.loginWithTwitter()}
-        >
-          Sign In with Twitter
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          className={classes.navLink}
-          onClick={() => Meteor.loginWithGithub()}
-        >
-          Sign In with GitHub
-        </Button>
-      </ListItem>
+      )}
     </List>
   );
 };
