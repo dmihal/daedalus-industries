@@ -16,14 +16,14 @@
 
 */
 import { Meteor } from 'meteor/meteor';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useCurrentUser } from 'react-meteor-hooks';
+import { Link } from 'react-router-dom';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import { makeStyles } from '@material-ui/styles';
 
 // core components
 import Button from '/client/components/CustomButtons/Button.jsx';
@@ -60,28 +60,40 @@ const HeaderLinks = ({ classes }) => {
       )}
 
       {user && (
-        <ListItem className={classes.listItem}>
-          <CustomDropdown
-            noLiPadding
-            buttonText={user.profile.name}
-            buttonProps={{
-              className: classes.navLink,
-              color: 'transparent',
-            }}
-            dropdownList={[
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  Meteor.logout();
-                }}
-                className={classes.dropdownLink}
-              >
-                Log out
-              </a>
-            ]}
-          />
-        </ListItem>
+        <Fragment>
+          <ListItem className={classes.listItem}>
+            <Button
+              color="transparent"
+              className={classes.navLink}
+              component={Link}
+              to="/messenger"
+            >
+              Messenger
+            </Button>
+          </ListItem>
+          <ListItem className={classes.listItem}>
+            <CustomDropdown
+              noLiPadding
+              buttonText={user.profile.name}
+              buttonProps={{
+                className: classes.navLink,
+                color: 'transparent',
+              }}
+              dropdownList={[
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    Meteor.logout();
+                  }}
+                  className={classes.dropdownLink}
+                >
+                  Log out
+                </a>
+              ]}
+            />
+          </ListItem>
+        </Fragment>
       )}
     </List>
   );

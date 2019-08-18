@@ -1,0 +1,24 @@
+{
+  "chats": [
+    {
+      "id": "1",
+      "name": "Team chat",
+      "messages": [
+        {
+          "from": "Hans Mundelein",
+          "message": "Daedalus Industries is the best"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Other Chat",
+      "messages": [
+        {
+          "from": "Satoshi",
+          "message": "Send me BTC"
+        }
+      ]
+    }
+  ]
+}

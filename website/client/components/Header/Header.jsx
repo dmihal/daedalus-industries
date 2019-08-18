@@ -16,11 +16,10 @@
 
 */
 import React from 'react';
-// nodejs library that concatenates classes
 import classNames from 'classnames';
-// nodejs library to set properties for components
 import PropTypes from 'prop-types';
-// @material-ui/core components
+import { Link } from 'react-router-dom';
+
 import withStyles from '@material-ui/core/styles/withStyles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -92,7 +91,9 @@ class Header extends React.Component {
       [classes.absolute]: absolute,
       [classes.fixed]: fixed
     });
-    const brandComponent = <Button className={classes.title}>{brand}</Button>;
+    const brandComponent = (
+      <Button className={classes.title} component={Link} to="/">{brand}</Button>
+    );
     return (
       <AppBar className={appBarClasses}>
         <Toolbar className={classes.container}>
