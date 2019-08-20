@@ -2,21 +2,21 @@
   "chats": [
     {
       "id": "1",
-      "name": "Team chat",
+      "name": "Internal",
       "messages": [
         {
-          "from": "Hans Mundelein",
-          "message": "Daedalus Industries is the best"
+          "from": "chuck@daedalus.industries",
+          "message": "-----BEGIN PGP MESSAGE-----\n\nhQEMAzyEv6EkihE0AQf8CYt2SFewvpxfJkRfe5nFMpgaCNSbVE8K0fJsMZWk2j5Y\n9C2ItU239yTfEANvpy5EA2PLgnPvJr9/hO0bSRFh/hQkHDHBsc7+hCCdbczV6vli\ncXFGYymbhpoUSWUtRLHbuOl0Xs2u9jY1W87s8/ND+vP9louWsybj4+XhI2MUXfUC\nkBMBDqQKkIDYHgdPVdaORvF73joAufRjyv8cJfzk4qPdHd03bGC9D2TXBIlKMQSA\nUPSUv3/ZlZdc0aJ/DY/ZS9S92gsjeSYlzNyTDx3xBqLFizZP8ofhUfUFm5/wNIzq\ngMtfrgsxf9VtKP3+tbRo4ESpI7THLAUMVwnFCXEPGtLA8gEq0QZRsTtDM0HUE/KH\nGZqTZg7pXkqB1oxQfIlL7DhvBWUa5yJB+TFxDl+Sv+8wl8UH/VLlDbg2yC3YVpGT\nIqZSNtZudafRWDoXYaaLXmDNUIVqRm/SmiBvg9lKkwX03VCG3rz+sAxZNrSkkhte\nR/5g5+KUrZIMO2XdLjRjM93O4CEU38T8WepX7Kx3t9vUbOecmLn4HGShHaVNqMCM\nZmexykI5jeOhx5MN1PNDUgUiWpu8USCoHmbIlZPPkESmwf0tHPczrhhf2y9/Biht\nNzedKMlbbk8X5s5BJeR6hSlPpzmXXNzrEt+1nDkT7foclVGb31xzQ4+N+Kp2Sndt\nNRzcLPZxhR8HJNwshjeeDvZu0WACe8vA4FOWXpxd5873xjdWhUneieb53O+yckSo\nipC/zcho0/ye4Z0i2b5pl9hFnYzdtE1Xm6V2iYDdIBrbbYXoMFX6Vux/34wupDPR\neSKI3TVB0+oELP8PuominoAG1xK7Fc+/2QxcKVTgiYAuvQBPeEB/if7SACldPLdm\nzLEX93pskqm+1LGbEDOY8xdyQ4AGEnPMMYKJEp/JpDtLOK1u\n=+zML\n-----END PGP MESSAGE-----\n"
         }
       ]
     },
     {
       "id": "2",
-      "name": "Other Chat",
+      "name": "Automatic",
       "messages": [
         {
-          "from": "Satoshi",
-          "message": "Send me BTC"
+          "from": "wolfgang@daedalus.industries",
+          "message": "-----BEGIN PGP MESSAGE-----\n\nhQEMAzyEv6EkihE0AQf/U8fW10d8tu1MTNn+/YHt//HN9zSb+FXjdT8tUZAqx7w0\n5KRbhGxextjQCAjxL4rqNFXCcqu25OdpAawwBeGJxVwR+codIcovgzlTzpD4cs3z\nmFuHH1f0eSLc759E3knTi0sGEXM8OJr+luiqAFo/1yXFKEwluT3O9vyT+WdeCFRs\n1D1kXcchMqiGfW2KULxaRbAY+IwZw+2lX4t+YjAxzgk+vzPcA/Zrex8SdnDCgfT8\nOnbJU+tXoygQU4tmP9GAkuHCRUq3yo9bnn9r7g9AikUAsOcexQn28zSmsCDcXdzd\n8L03AC8Y9qCSdwbUBjXNbOIZmpjmr3G/zEW93/AmLdLpARdyYuIwMJSltQKTuN25\nuUfLyHyzjbnVjqiskt7aKp8D9qGi0MXINdFhG8sw985SgEN2RzUsP54GfE+ZpvDZ\nvS9cI8TrFoE8XIPrX5xTqTq5FCsWsz6KOESpCKuwgyZlavmrIEOSmvLsXuLCVHbk\nXxMAOKFyKJ4irMK+yXNjxJOOep7lfA2bZpjf4WQl2ff1AFJCwj4TOFAPdKHfbgjC\nsYYmG8hog8IB6doDpyhxeqNBxtMAa6J3TX2U+CV0H3R5p8pjKWLY5lVryq91N/W/\ngL8mH4ehQyCKP0ad+cUJxQxg6GtOsMYrJ9VxpWCenmlVvHvKK+h2WVyD84I689kQ\nKjdHL0YYEn3HHnYIhrmeWMyXwt1wzoHdPtOe4jWMiFmeZyHu6V+yfEAAI4ghHyFF\nfVQTBhb33TMOlQbdnXNCxG368L4EY+PUmxqw1El48YzB+A5JCDgPBuJXELgqo5fl\nIwq/Hg0wNmwNuvg6lf+44dOfWqXg+TYAl9r50lgrxYxNIfXL7/ZxqE1qQAdH5hrP\nn1nUwStAnDPBASTNlpXDdyhXEU+Sed1MJOSL8oPEwRU50Pto4BYkqwwQE3Ux4Qfy\n4/VGRB4CnPSrcTHMPNXrnAcfF3L0t/sn8UcprhVin2O7cZLEsHFLqbQdyY87u0hU\nIfUijR2djTzBrdNAnAno8MzAoMqKZFhteraQP5Y5bicG1z0/oDcDVegFW8nVwhx7\n5Aahf/8xQk3RB9acAIMTwGOVJTmEAJ4ZkHNpjKX4LJfxde5shW0IpLXQ5JvH4PJB\nHCjYc5jbZS/JfMqhp1leoJXF0ntcx1PAITGzsiO4nP10AxMr+VkkuPgUMmxFy5sl\nWeC7+pXGLYgAroCohGVZHZSZCpxcQu4Gf+3nTIm0cNh9K8IWn/KibcfV3Yq2rcwQ\nTZw3wBtqoW7+U/VJfsxsPMFudUFykqR0TciOnr/jyx7RTBMmQfOR6wmSxSNXLEfF\n8BwUfZ8N5UbF/WTypfRPwHigBXwr6Sn6CrkFebtHcVpUY7YbAy3jR2hiQb61Nmbd\nw7HjLx9gswIhetWgKq8m1azE+Mu+/2s1/JCveTbdQyeDSDtqK4uSANYOmUQGD6op\na30yTLG8Evr8kDi8cuhvhJYsQO48lpy+aGSu7ApxpGr70gk=\n=jZ2q\n-----END PGP MESSAGE-----"
         }
       ]
     }
