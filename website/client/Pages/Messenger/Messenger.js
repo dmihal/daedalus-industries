@@ -24,7 +24,7 @@ const Messenger = () => {
       <Header
         color="white"
         routes={[]}
-        brand="Daedalus Industries"
+        brand="Daedalus Industries - Ariadne Messenger"
         rightLinks={<HeaderLinks />}
         fixed
       />
