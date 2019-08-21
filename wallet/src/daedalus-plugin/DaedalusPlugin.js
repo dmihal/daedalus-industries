@@ -1,5 +1,5 @@
 import puzzleABI from './abi/Puzzle.json';
-import AccountRegisterPage from './ui/AccountRegisterPage';
+import DiscoverCluePage from './ui/DiscoverCluePage';
 import AccountStatus from './ui/AccountStatus';
 import Game from './ui/Game';
 import Bridge from './Bridge';
@@ -16,7 +16,7 @@ export default class DaedalusPlugin {
   initializePlugin(pluginContext) {
     this._pluginContext = pluginContext;
 
-    pluginContext.addPage('/register-account', AccountRegisterPage);
+    pluginContext.addPage('/discover/:pk', DiscoverCluePage);
     pluginContext.addElement('home-top', AccountStatus);
     pluginContext.addElement('home-middle', Game);
 
@@ -31,7 +31,18 @@ export default class DaedalusPlugin {
     return this.contract;
   }
 
+  getWeb3() {
+    return this._pluginContext.getWeb3(this.network);
+  }
+
+  storeClue(index, privateKey) {
+    const clues = JSON.parse(localStorage.getItem('storedClues') || '{}');
+    clues[index] = privateKey;
+    localStorage.setItem('storedClues', JSON.stringify(clues));
+  }
+
   getStoredClue(index) {
-    return null;
+    const clues = JSON.parse(localStorage.getItem('storedClues') || '{}');
+    return clues[index];
   }
 }
