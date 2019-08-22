@@ -35,7 +35,7 @@ const Message = ({ message }) => {
   return (
     <div className={classes.message}>
       <div className={classes.sender}>{message.from}</div>
-      <div>{message.message}</div>
+      {message.message.split('\n').map(line => (<div>{line}</div>))}
     </div>
   );
 };
