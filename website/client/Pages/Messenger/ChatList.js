@@ -8,6 +8,10 @@ const useStyles = makeStyles({
   },
   chat: {
     padding: 4,
+    '&:hover': {
+      background: '#888888',
+      cursor: 'pointer',
+    }
   },
   selected: {
     background: 'gray',
@@ -30,7 +34,7 @@ const ChatList = ({ selected, onChange, chats }) => {
         >
           <div className={classes.name}>{chat.name}</div>
           <div>
-            {chat.messages.length > 0 ? chat.messages[chat.messages.length - 1].message : null}
+            {chat.messages.length > 0 ? chat.messages[chat.messages.length - 1].message.substr(0, 20) : null}
           </div>
         </div>
       ))}
