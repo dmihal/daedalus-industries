@@ -37,7 +37,7 @@ const BurnerWallet = () =>
     // assets={[dai, eth]}
     plugins={[
       // exchange,
-      new DaedalusPlugin({ assetId: 'tdai', contractAddress: '0x16E1CfF1A7066B908d4649ADd97aA6FfF4E0fDB5', network: '5777' }),
+      new DaedalusPlugin({ assetId: 'tdai', contractAddress: '0xe573aEEf45156f9e50db2dAd9F66a1E29C99bd31', network: '5777' }),
     ]}
   />
 

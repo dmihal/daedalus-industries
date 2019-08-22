@@ -8,15 +8,8 @@ const DiscoverPage = ({ match, actions, accounts, plugin, burnerComponents }) =>
 
   const discoverClue = async (pk) => {
     try {
-      const web3 = plugin.getWeb3();
-      const account = web3.eth.accounts.privateKeyToAccount(pk);
-      const clueNum = await plugin.getContract().methods.clueToClueNum(account.address).call();
-      if (clueNum !== 0) {
-        plugin.storeClue(clueNum, pk);
-        setStatus('success');
-      } else {
-        setStatus('invalid');
-      }
+      const success = await plugin.discoverClue(pk);
+      setStatus(success ? 'success' : 'invalid');
     } catch (e) {
       console.error(e);
       setStatus('error');

@@ -71,6 +71,46 @@ export default class Game extends Component {
     this.setState({ clueStatus, status });
   }
 
+  getSignatures(account) {
+    const web3 = this.props.plugin.getWeb3();
+    const accounts = this.props.plugin.getStoredClues();
+
+    const clues = [];
+    const rs = [];
+    const ss = [];
+    const vs = [];
+    Object.values(accounts).forEach(pk => {
+      const clueAccount = web3.eth.accounts.privateKeyToAccount(pk);
+      const { r, s, v } = clueAccount.sign(web3.utils.keccak256(account), pk);
+      clues.push(clueAccount.address);
+      rs.push(r);
+      ss.push(s);
+      vs.push(v);
+    });
+
+    return { clues, rs, ss, vs };
+  }
+
+  async donate() {
+    const { plugin, accounts } = this.props;
+    const contract = plugin.getContract();
+
+    this.setState({ status: 'sending' });
+    const { clues, rs, ss, vs } = this.getSignatures(accounts[0]);
+    const remaining = await contract.methods.remainingStake(accounts[0]).call();
+    await contract.methods.findCluesAndDonate(clues, vs, rs, ss, remaining).send({ from: accounts[0] });
+    this.setState({ status: 'complete' });
+  }
+
+  async redeem() {
+    const { plugin, accounts } = this.props;
+
+    this.setState({ status: 'sending' });
+    const { clues, rs, ss, vs } = this.getSignatures(this.props.accounts[0]);
+    await plugin.getContract().methods.findCluesAndRedeem(clues, vs, rs, ss).send({ from: accounts[0], gas: 200000 });
+    this.setState({ status: 'complete' });
+  }
+
   render() {
     const { accounts, burnerComponents, plugin } = this.props;
     const { status, clueStatus, numClues } = this.state;
@@ -111,12 +151,21 @@ export default class Game extends Component {
       return (<div>Staking...</div>);
     }
 
+    if (status === 'sending') {
+      return (<div>Sending</div>);
+    }
+
+    if (status === 'complete') {
+      return (<div>Complete</div>);
+    }
+
     if (status === 'playing') {
       return (
         <div>
           {[...Array(numClues).keys()].map(i => (
             <div key={`clue${i + 1}`}>{i + 1}: {clueStatus[i + 1] ? 'Unlocked' : 'Locked'}</div>
           ))}
+          <Button onClick={() => this.props.actions.navigateTo('/secret')}>Secret Phrase</Button>
         </div>
       );
     }
@@ -125,7 +174,8 @@ export default class Game extends Component {
       return (
         <div>
           <div>All clues unlocked</div>
-          <Button>Scan</Button>
+          <Button onClick={() => this.donate()}>Donate</Button>
+          <Button onClick={() => this.redeem()}>Redeem</Button>
         </div>
       );
     }

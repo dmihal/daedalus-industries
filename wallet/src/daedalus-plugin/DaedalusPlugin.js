@@ -1,6 +1,7 @@
 import puzzleABI from './abi/Puzzle.json';
 import DiscoverCluePage from './ui/DiscoverCluePage';
 import AccountStatus from './ui/AccountStatus';
+import SecretPhrasePage from './ui/SecretPhrasePage';
 import Game from './ui/Game';
 import Bridge from './Bridge';
 
@@ -16,9 +17,11 @@ export default class DaedalusPlugin {
   initializePlugin(pluginContext) {
     this._pluginContext = pluginContext;
 
+    pluginContext.addPage('/secret', SecretPhrasePage);
     pluginContext.addPage('/discover/:pk', DiscoverCluePage);
     pluginContext.addElement('home-top', AccountStatus);
     pluginContext.addElement('home-middle', Game);
+    pluginContext.addHomeButton('Secret Phrase', '/secret');
 
     this.bridge = new Bridge();
   }
@@ -33,6 +36,22 @@ export default class DaedalusPlugin {
 
   getWeb3() {
     return this._pluginContext.getWeb3(this.network);
+  }
+
+  async discoverClue(pk) {
+    const web3 = this.getWeb3();
+    const account = web3.eth.accounts.privateKeyToAccount(pk);
+    console.log(account);
+    const clueNum = await this.getContract().methods.clueToClueNum(account.address).call();
+    if (clueNum !== 0) {
+      this.storeClue(clueNum, pk);
+      return true;
+    }
+    return false;
+  }
+
+  getStoredClues() {
+    return JSON.parse(localStorage.getItem('storedClues') || '{}');
   }
 
   storeClue(index, privateKey) {
