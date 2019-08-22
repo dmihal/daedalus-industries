@@ -991,18 +991,26 @@
     isomorphic-fetch "^2.2.1"
     web3-utils "^1.0.0-beta.55"
 
-"@burner-wallet/assets@^0.0.15":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@burner-wallet/assets/-/assets-0.0.15.tgz#7451ff9b108e3cb055621ca1ea84ec36430c83e6"
-  integrity sha512-V0DqJhviK6l2dKYayl/uksXMgtDJijkUyIYCgqJvAMBwlYDRfN9tOEIYNEnYHepLVPwK2ML8LXo4QvDVbC/BPg==
+"@burner-wallet/assets@0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@burner-wallet/assets/-/assets-0.0.17.tgz#a613b9e90f1d1e08951c7e705c4ea9988041b4e0"
+  integrity sha512-tNxwM2JPP/W6NOwz1JAlgiviq1ZBQM11KCFe4wY2eVc/DtUqp2yRXdvosv/cRr4ZYcBk9PtAZ4Z9KG93wWsxiA==
   dependencies:
     isomorphic-fetch "^2.2.1"
     web3-utils "^1.0.0-beta.55"
 
-"@burner-wallet/core@^0.0.15":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@burner-wallet/core/-/core-0.0.15.tgz#7b5e8f24778c395de7de2eba06b90a697a0935ac"
-  integrity sha512-+hO64BgLKR3I+1kDohHgFXR/X7f5UPeoq1RUg2HYW31SNmvJZ0FEuubRYI9cOMiz79zhMd1s/rMiIdMvSybaFQ==
+"@burner-wallet/assets@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@burner-wallet/assets/-/assets-0.0.19.tgz#464f23a2a61d9a9929952fe30ecc261f3e0121e0"
+  integrity sha512-QPmEUsrzAuYE1DTfyLnSR6Z1N9wqTIWQ9+Mq/Dfnntkmp6VPlh5LU2hFakPOwev4cdYhZfxITXWfjIcrTeMo3A==
+  dependencies:
+    isomorphic-fetch "^2.2.1"
+    web3-utils "^1.0.0-beta.55"
+
+"@burner-wallet/core@0.0.19", "@burner-wallet/core@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@burner-wallet/core/-/core-0.0.19.tgz#57b5f84208fd86e3dcc4b3b1675c297f39575082"
+  integrity sha512-Cq+Vlts+lcqsuKI5mXf+LYZI5a7n+EOEohb4oZOoztli76dB9SibHVXioKuYXdk1lHx6oAQPMtbzjekMVFB27A==
   dependencies:
     "@burner-wallet/assets" "*"
     tabookey-gasless "0.3.3-a"
@@ -1056,12 +1064,13 @@
     react-qr-reader "^2.2.1"
     react-router-dom "^5.0.1"
 
-"@burner-wallet/ui@^0.0.26":
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/@burner-wallet/ui/-/ui-0.0.26.tgz#3fa1702b1721007f5eb619652c4db17df2b09f37"
-  integrity sha512-nF/uTY6GpivnkUjY9QbJgbO/65d85qAd9g5xLYluscnyvmAFmmhpDIzeshUxFfEGy+GcPyBtrwFj4udI/3rAaw==
+"@burner-wallet/ui@^0.0.27":
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/@burner-wallet/ui/-/ui-0.0.27.tgz#f1bb81ba0c49de337ed19bfefaea93a86ca94250"
+  integrity sha512-N0EYswywD8YEatCIhMOCYfYERYnTzNa0UGkKM+EtylViZtj4/VR7hEPNIbS6G+9GFC1EdaIdz5Fj89eoTFUKBw==
   dependencies:
-    "@burner-wallet/assets" "0.0.11"
+    "@burner-wallet/assets" "0.0.17"
+    "@burner-wallet/core" "0.0.19"
     "@types/qrcode.react" "^0.8.2"
     "@types/react" "*"
     "@types/react-qr-reader" "^2.1.2"

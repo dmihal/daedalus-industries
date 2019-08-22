@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const STAKE_AMOUNT = '1000000000000000000';
+const STAKE_AMOUNT = '20000000000000000000';
 
 const StakeAmount = ({ amount }) => (
   <div className="BalanceRow_balanceRow__2DRQd">
