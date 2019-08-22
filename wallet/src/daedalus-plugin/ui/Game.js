@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 
 const STAKE_AMOUNT = '1000000000000000000';
 
+const StakeAmount = ({ amount }) => (
+  <div className="BalanceRow_balanceRow__2DRQd">
+    <div className="BalanceRow_assetName__1Zw3e">Staked</div>
+    <div className="BalanceRow_assetBalance__3STUO">{amount}</div>
+  </div>
+)
+
 export default class Game extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +16,7 @@ export default class Game extends Component {
       status: 'start',
       numClues: 0,
       clueStatus: {},
+      staked: '0',
     }
   }
 
@@ -68,7 +76,9 @@ export default class Game extends Component {
       }
     }
     const status = unlockedAll ? 'unlocked' : 'playing';
-    this.setState({ clueStatus, status });
+    const web3 = plugin.getWeb3();
+    const staked = await plugin.getContract().methods.remainingStake(account).call();
+    this.setState({ clueStatus, status, staked: web3.utils.fromWei(staked.toString(), 'ether') });
   }
 
   getSignatures(account) {
@@ -113,7 +123,7 @@ export default class Game extends Component {
 
   render() {
     const { accounts, burnerComponents, plugin } = this.props;
-    const { status, clueStatus, numClues } = this.state;
+    const { status, clueStatus, numClues, staked } = this.state;
 
     if (accounts.length === 0) {
       return null;
@@ -162,6 +172,7 @@ export default class Game extends Component {
     if (status === 'playing') {
       return (
         <div>
+          <StakeAmount amount={staked}/>
           {[...Array(numClues).keys()].map(i => (
             <div key={`clue${i + 1}`}>{i + 1}: {clueStatus[i + 1] ? 'Unlocked' : 'Locked'}</div>
           ))}
@@ -173,6 +184,7 @@ export default class Game extends Component {
     if (status === 'unlocked') {
       return (
         <div>
+          <StakeAmount amount={staked}/>
           <div>All clues unlocked</div>
           <Button onClick={() => this.donate()}>Donate</Button>
           <Button onClick={() => this.redeem()}>Redeem</Button>
