@@ -17,6 +17,7 @@ export default class Game extends Component {
       numClues: 0,
       clueStatus: {},
       staked: '0',
+      hintAmount: '',
     }
   }
 
@@ -101,6 +102,14 @@ export default class Game extends Component {
     return { clues, rs, ss, vs };
   }
 
+  async requestHint() {
+    const { plugin, accounts } = this.props;
+    const amount = plugin.getWeb3().utils.toWei(this.state.hintAmount, 'ether');
+    await plugin.getContract().methods.donate(amount).send({ from: accounts[0] });
+    this.setState({ hintAmount: '' });
+    this.updateGameStatus();
+  }
+
   async donate() {
     const { plugin, accounts } = this.props;
     const contract = plugin.getContract();
@@ -123,7 +132,7 @@ export default class Game extends Component {
 
   render() {
     const { accounts, burnerComponents, plugin } = this.props;
-    const { status, clueStatus, numClues, staked } = this.state;
+    const { status, clueStatus, numClues, staked, hintAmount } = this.state;
 
     if (accounts.length === 0) {
       return null;
@@ -177,6 +186,10 @@ export default class Game extends Component {
             <div key={`clue${i + 1}`}>{i + 1}: {clueStatus[i + 1] ? 'Unlocked' : 'Locked'}</div>
           ))}
           <Button onClick={() => this.props.actions.navigateTo('/secret')}>Secret Phrase</Button>
+          <div>
+            <input type="number" value={hintAmount} onChange={e => this.setState({ hintAmount: e.target.value })} min="0" />
+            <Button onClick={() => this.requestHint()}>Request Hint</Button>
+          </div>
         </div>
       );
     }
