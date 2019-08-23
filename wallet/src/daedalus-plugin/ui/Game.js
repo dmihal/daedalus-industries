@@ -7,7 +7,18 @@ const StakeAmount = ({ amount }) => (
     <div className="BalanceRow_assetName__1Zw3e">Staked</div>
     <div className="BalanceRow_assetBalance__3STUO">{amount}</div>
   </div>
-)
+);
+
+const KeyFilled = () => (
+  <svg style={{ width: 48, height: 48 }} viewBox="0 0 24 24">
+    <path fill="#000000" d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7,6A6,6 0 0,0 1,12A6,6 0 0,0 7,18C9.61,18 11.83,16.33 12.65,14H17V18H21V14H23V10H12.65Z" />
+  </svg>
+);
+const KeyOutline = () => (
+  <svg style={{ width: 48, height: 48 }} viewBox="0 0 24 24">
+    <path fill="#000000" d="M22,19H16V15H13.32C12.18,17.42 9.72,19 7,19C3.14,19 0,15.86 0,12C0,8.14 3.14,5 7,5C9.72,5 12.17,6.58 13.32,9H24V15H22V19M18,17H20V13H22V11H11.94L11.71,10.33C11,8.34 9.11,7 7,7A5,5 0 0,0 2,12A5,5 0 0,0 7,17C9.11,17 11,15.66 11.71,13.67L11.94,13H18V17M7,15A3,3 0 0,1 4,12A3,3 0 0,1 7,9A3,3 0 0,1 10,12A3,3 0 0,1 7,15M7,11A1,1 0 0,0 6,12A1,1 0 0,0 7,13A1,1 0 0,0 8,12A1,1 0 0,0 7,11Z" />
+  </svg>
+);
 
 export default class Game extends Component {
   constructor(props) {
@@ -182,13 +193,23 @@ export default class Game extends Component {
       return (
         <div>
           <StakeAmount amount={staked}/>
-          {[...Array(numClues).keys()].map(i => (
-            <div key={`clue${i + 1}`}>{i + 1}: {clueStatus[i + 1] ? 'Unlocked' : 'Locked'}</div>
-          ))}
+          <div style={{ display: 'flex'  }}>
+            {[...Array(numClues).keys()].map(i => (
+              <div key={`clue${i + 1}`} style={{ padding: 12 }}>
+                {clueStatus[i + 1] ? <KeyFilled /> : <KeyOutline />}
+              </div>
+            ))}
+          </div>
           <Button onClick={() => this.props.actions.navigateTo('/secret')}>Secret Phrase</Button>
-          <div>
-            <input type="number" value={hintAmount} onChange={e => this.setState({ hintAmount: e.target.value })} min="0" />
-            <Button onClick={() => this.requestHint()}>Request Hint</Button>
+          <div style={{ display: 'flex' }}>
+            <input
+              type="number"
+              value={hintAmount}
+              onChange={e => this.setState({ hintAmount: e.target.value })}
+              min="0"
+              placeholder="10 Dai"
+            />
+            <Button onClick={() => this.requestHint()} disabled={hintAmount === ''}>Send to Eve</Button>
           </div>
         </div>
       );
