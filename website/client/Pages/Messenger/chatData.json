@@ -2,7 +2,7 @@
   "chats": [
     {
       "id": "1",
-      "name": "Internal",
+      "name": "chuck@daedalus.industries",
       "messages": [
         {
           "from": "chuck@daedalus.industries",
@@ -12,21 +12,31 @@
     },
     {
       "id": "2",
-      "name": "Automatic",
+      "name": "wolfgang@daedalus.industries",
       "messages": [
         {
-          "from": "otto@daedalus.industries",
+          "from": "wolfgang@daedalus.industries",
           "message": "-----BEGIN PGP MESSAGE-----\n\nhQEMAzyEv6EkihE0AQf/U8fW10d8tu1MTNn+/YHt//HN9zSb+FXjdT8tUZAqx7w0\n5KRbhGxextjQCAjxL4rqNFXCcqu25OdpAawwBeGJxVwR+codIcovgzlTzpD4cs3z\nmFuHH1f0eSLc759E3knTi0sGEXM8OJr+luiqAFo/1yXFKEwluT3O9vyT+WdeCFRs\n1D1kXcchMqiGfW2KULxaRbAY+IwZw+2lX4t+YjAxzgk+vzPcA/Zrex8SdnDCgfT8\nOnbJU+tXoygQU4tmP9GAkuHCRUq3yo9bnn9r7g9AikUAsOcexQn28zSmsCDcXdzd\n8L03AC8Y9qCSdwbUBjXNbOIZmpjmr3G/zEW93/AmLdLpARdyYuIwMJSltQKTuN25\nuUfLyHyzjbnVjqiskt7aKp8D9qGi0MXINdFhG8sw985SgEN2RzUsP54GfE+ZpvDZ\nvS9cI8TrFoE8XIPrX5xTqTq5FCsWsz6KOESpCKuwgyZlavmrIEOSmvLsXuLCVHbk\nXxMAOKFyKJ4irMK+yXNjxJOOep7lfA2bZpjf4WQl2ff1AFJCwj4TOFAPdKHfbgjC\nsYYmG8hog8IB6doDpyhxeqNBxtMAa6J3TX2U+CV0H3R5p8pjKWLY5lVryq91N/W/\ngL8mH4ehQyCKP0ad+cUJxQxg6GtOsMYrJ9VxpWCenmlVvHvKK+h2WVyD84I689kQ\nKjdHL0YYEn3HHnYIhrmeWMyXwt1wzoHdPtOe4jWMiFmeZyHu6V+yfEAAI4ghHyFF\nfVQTBhb33TMOlQbdnXNCxG368L4EY+PUmxqw1El48YzB+A5JCDgPBuJXELgqo5fl\nIwq/Hg0wNmwNuvg6lf+44dOfWqXg+TYAl9r50lgrxYxNIfXL7/ZxqE1qQAdH5hrP\nn1nUwStAnDPBASTNlpXDdyhXEU+Sed1MJOSL8oPEwRU50Pto4BYkqwwQE3Ux4Qfy\n4/VGRB4CnPSrcTHMPNXrnAcfF3L0t/sn8UcprhVin2O7cZLEsHFLqbQdyY87u0hU\nIfUijR2djTzBrdNAnAno8MzAoMqKZFhteraQP5Y5bicG1z0/oDcDVegFW8nVwhx7\n5Aahf/8xQk3RB9acAIMTwGOVJTmEAJ4ZkHNpjKX4LJfxde5shW0IpLXQ5JvH4PJB\nHCjYc5jbZS/JfMqhp1leoJXF0ntcx1PAITGzsiO4nP10AxMr+VkkuPgUMmxFy5sl\nWeC7+pXGLYgAroCohGVZHZSZCpxcQu4Gf+3nTIm0cNh9K8IWn/KibcfV3Yq2rcwQ\nTZw3wBtqoW7+U/VJfsxsPMFudUFykqR0TciOnr/jyx7RTBMmQfOR6wmSxSNXLEfF\n8BwUfZ8N5UbF/WTypfRPwHigBXwr6Sn6CrkFebtHcVpUY7YbAy3jR2hiQb61Nmbd\nw7HjLx9gswIhetWgKq8m1azE+Mu+/2s1/JCveTbdQyeDSDtqK4uSANYOmUQGD6op\na30yTLG8Evr8kDi8cuhvhJYsQO48lpy+aGSu7ApxpGr70gk=\n=jZ2q\n-----END PGP MESSAGE-----"
         }
       ]
     },
     {
       "id": "3",
-      "name": "Automatic",
+      "name": "bob@daedalus.industries",
       "messages": [
         {
           "from": "bob@daedalus.industries",
-          "message": "-----BEGIN PGP MESSAGE-----\r\n\r\nhQEMAzyEv6EkihE0AQf9HpHKJhKdUKVbbKeJdp85TKBtgm86\/boOpfzadqBmP6TD\r\nu4emNgV1PM5Wr89JqumN21fH6W\/MEmFQn4utVmEFYknn8ICAVVc9av2CSv2HQ+4k\r\nmDJj1UmgLwIowDlL2ieNkoiORD50eZFR0YzBA6K3Ez9NYDtSz1iGM+JxyKTKyknD\r\nXxlgwI8SfRTx4\/jvOOlQRE42LocOyYF7WeDHFh70QlZqKW9pMZ\/V+elIrJKVhnez\r\n5Digcgmzmh26sMKrKlEgmV9Hk2m0NhRgUbqK\/JqVuPOrIY2QyXm7a0EnqiVNgqYX\r\nhF8o5DnO\/RFz3lb+\/5feDeKUZrdj1\/PJPGLmEoQ0JNLqAU2ugj6HC+bsvktsVSjY\r\nmCLxhiyFRpsglNbMIdYJmccc9uVKMDxpkrGHOah3DSM93EWqa9bRWF5Xc\/W8sBNu\r\n4Rebr6CejGqu36EPf6\/HhzuQHh643b1EToTVekrW8vExQqwjTQPwUcJx6nZmEvmB\r\n5tGF3ro\/DrJ6aPr0OXq+uuDHaVn6CSyOWD1VGQBJN979qSaaRaDleylxxAV7wPTp\r\nubPlJ6HnnQGveTmTocjGESFUUOJbMZkmko4JqN72sfvL6TwifjxnMa3caVqGdl\/Y\r\naXER8Xj7NnWIhwChxggYnZ5pYhg+O33xkya1JwuJbP\/Qp1Y3J6Hv0x2Px9+KspUs\r\niufARpAp6JZwFZ2dMIDQVjMEUdwhq6+Iel1ISdfHI9C+HJUYcatdQ3h\/w1yhEi\/\/\r\nt92qwm+KoqyVm7W+jqQtcMDpdJZ6Ueat3i9dIMw8rhkv+P9rmim0oV1V+1GIX6W3\r\nsFI3KGPcm64OTr\/xMlmavEu\/OxV1n6aKgnrNmZq2kwwAJq5TQYlwSPtzOf1XuoDp\r\nhnLtMxnoHHN\/5OFEziYSxY1JjA\/jnhoXLI4bMJgCr57ctEIIPFg+LqO71XMVYitM\r\ntLzDpVDd3W0+nHi\/os3Ib1zVXV6otyCrRpucGEEtabNcCqHeyZOV231TDUQRSSMn\r\nwsi6oZ+SnmvyZ0io6E1C3Hr5CIyXD8E1x0tE38+g4jEAk+RpdfIJmWHFMNkSrw3W\r\nShSvR4qNr6qwGdoX4hNDCqpS+96kN\/DDjAyGHb\/6S\/LKPPvGLrkM2xaQLvUCTDXq\r\n5vvKVXj0vA6U73hSGzmVcM4l0wFHj4wuZ4C\/JE2OZ4ko+g4mfNH4dsVVtLyhsTEK\r\npKWEa5qJ+BcNk5E9jB6hMVWGHo6f1mz2hzSMDNGseMxax4x72FHLp8lJ+Lk4uRsA\r\nNjzZIV9V\/+\/1+A3m9e\/XCKnW1A0OPhYjRTI9GRGFpF8of1dMRvnhJKXhqxYHbHuJ\r\nGJE9EW6oXa4HnaDZzEkECVgW7j\/1gdLhj3g15q6Oun3qJEGobAWDQqEqqXchN\/8x\r\nOZvh9mZMZ2mlGozZuLKMm61NfhjL0LnqLCmM3NZE0NczIdEF\/4OzLQ6xQRUV2r1D\r\nxPs\/6wPeqBAb8lMFQn6cuYVm4cRfUwqdbnhRv8H3h3r\/VX2Niv35jqJ4j3NMmxsh\r\nnQLsj4eNlqIUR21pw6txGw5\/WwFMvlp1h3c6aAZK8l8y4m1A6Z9rFLzDT92nKRjn\r\nrVa8IUI2ZqSlad9NJPHrD7NQvVKTV00dLnZX5UemNn0cn3PbvjSetryHyAUzkr\/S\r\nkWW+9quUXVp63iio77r0qIaVRu1YGmRUBsFKd5Je9zJ+qefW\/zpFGYOZOHINU4Lw\r\nKSanQB1lRhEz1gsQ87CBRs7zw4KediAa0+OzfxGCznlBIurDEiD\/Lg==\r\n=3\/HL\r\n-----END PGP MESSAGE-----"
+          "message": "-----BEGIN PGP MESSAGE-----\r\n\r\nhQEMAzyEv6EkihE0AQgAzT7pWqLjmFgu\/L88xEKAT1gKH6AkWyiJjOMPZ9iw1F2S\r\niLe7I1mFZmqLr\/KNNzbjdw6E2CEao3HcMmutW6yb07gEyfE1H2l3gj6i7d13kLng\r\nMtJagLDCNs\/6wVSNcAZ858u568MQ5B4cNS4y9FSP63VJ5Hy4hvs7w1fQiJAeBySz\r\nbLp8eeICg\/S1uXTK+Bj5ATi5sYk1IOCJ5rgSekodW8Ihh88NS2uaRxTL1+TV\/j2c\r\nCKYJG+vu+VXb\/EcXWxXwhrFJSPZlWpLEqG19CG34vyLbBmESwMMtRsfvWWBLHiOM\r\nEwiENMCXXKQay\/F8aPvSVpGDsF\/5enFWJIBTVrgjptLpAesRbyMu0g1kDgjqcFDa\r\nkgmXtmWag5f4ck3MjfKfxmMPWjyko4ysJA44KQqv2g8daXlvIV4\/ekAvE6MttIVI\r\nEvuprMrRXddf2s10o5pPWtk4NdI4bleSE6SkBI8vCAAeqHaLXzlKFxEo2PJARjRL\r\ncZv6uzCqBgwFPLMtgmlsWwql7oXEcYDxb7HDPo+eYc4mla2SD7DWSX0Czz6wP+MK\r\nStMw6RG4P0n2SZZB+zj2MuBp16+45SY7UywdzJUgUIaytpYY7dk8GBUeP2UaTG2a\r\nV\/u\/MX7J0PV+KKTsO2kHgNabbVfMncTsQzDHpmoZJWGImiRy4ILu3MYoWFOKvHUo\r\nbiyqgsPohC1lFnBa\/Gknjkm\/maWhcnTz++aIN5K9RBn89e8EA7HBVvy1XYIoJUO0\r\n8T5795pYTcI4ZDeFv2G3R6RH5a1jb1mV9UnbQQNYDNTdQbD\/Do2KdiKBC\/0JMFfu\r\n4cqDlc1Oohw3Y1MLCrPJT97KXV3oB7aIDYaL55\/FlX4PF9MRhU07TWPCmCm4wdSO\r\nfT7dlShu0xUVNbM2VRwQuTS\/mK+DTRpNVeEVUsKJx831OzsfIUpjhR3yqzG4JUgx\r\nz2OQuI9zgjsL0Wtv7z\/nkywskTGx0oK3e659iiiSmAp9tVV1w+l7QOm4x76GR8Py\r\nyXFSFlY5CcndsSckL9nuDIglkQWsS6\/p1J0BpriHBRCdF+oZ3P1aHrXkeDVBHTJp\r\nwfsyLnDkmQ==\r\n=MM3d\r\n-----END PGP MESSAGE-----"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "otto@daedalus.industries",
+      "messages": [
+        {
+          "from": "otto@daedalus.industries",
+          "message": "-----BEGIN PGP MESSAGE-----\r\n\r\nhQEMAzyEv6EkihE0AQgA2FKAud6+5mTFzO3WiHhONoQ4AVInINEm+iEX9+AOKodK\r\n2sjHeW2NH7EDPQbjhhOWmCVsSRuOpoS+Ae8eu7iUjfRCGnJPJaevhjzM\/m3U0hPw\r\n4\/CqiBsiHQKeY4JQL5HX65gZaCVL\/NNYxU\/rvfN08OGrdUWagWrvxd1oeUDyc+N\/\r\n+z3m\/WcQM86jfVqK6ploIiSf7oF2TUo3\/lDH9CAEehIZPb0G2FMaFl7LCO5NDzvJ\r\nSy\/dFgx8qLnQbLhI9sPad8Hcyf9yyuMEYuQBYeVO3HAXYQMKM1E0jWAbaXVODj6g\r\nHOxSacT6tAJg+9qnBqxUKhnPNZezAZLa7vT1f6gsctLpAeiERp48qzUsDgMZdvsK\r\n57hPdqq7sqAugKZsDJwMMA0Dzvu\/iZYVd93oqp5i8cm6KQdi50OGoQxMSmRKv1cY\r\nNIWthOYq3EIfy2zdPN4noefOQl29r2IGv2Ngc4dhOdZzq4TFOXuIJmb5Fy5jAVnJ\r\nJewS31vYgF+2WLJq0RAvBgs02jc4hWBhPLtSnr383ivVOx2SKvVdvKTlbAS+IwMz\r\ngbcchpVwbPuwT5tc4IYB7CdOLBwaz4GW7AfNb\/2MUm9SraxZb4HZLFBPwKl5hYMi\r\n0WMm5f33ryMJpVre5lfnaKmo0NoeJ4XzpWoxas5U1gfBYJ64FUtAhNz+JTG1sg3L\r\nnOGNTiU+IJZMm4xTvinXk0o6HTbuTiwUAz+qpjcGLaDAsYi1aZgcitMLDgDuNDWe\r\nLNNX3DB3cJie5aT1DI+Ln77lYmH70snaVVzHIyYakSIVZqAnEQ1emyy3C775nCM2\r\nACj9vkYLwbv9W\/XtuJYNlJgSq6P3Ux\/4oYfJC0nUTIe28lUB0Mi9FOP\/zL2tUvtP\r\nlJTWJjzEIBqrWVJuNWCaGpejdmRKneLnDb3\/lxXVE8l1BDG9uyPTSFh52EHOUvYg\r\niR053UX1s6\/Vq20Prdd4l\/PpM1gU9ktSDASZ+O6Xe0vGKadJ18iVAaiUjxQFvFdC\r\nARvrfRJ+kgp12OwTpj2GgKEvThZMFiknBs5XwB\/u8GQ6VYRgf94iZ4b78ztFIEJD\r\nlGqk8dHhWUhFKwqa1XY3UkU=\r\n=EKHd\r\n-----END PGP MESSAGE-----"
         }
       ]
     }
