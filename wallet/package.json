@@ -7,7 +7,7 @@
     "@burner-wallet/core": "^0.0.19",
     "@burner-wallet/exchange": "^0.0.4",
     "@burner-wallet/plugins": "^0.0.3",
-    "@burner-wallet/ui": "^0.0.27",
+    "@burner-wallet/ui": "^0.0.29",
     "bip39": "^3.0.2",
     "ethereumjs-wallet": "^0.6.3",
     "react": "^16.8.6",

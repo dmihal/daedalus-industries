@@ -30,9 +30,18 @@ const core = new BurnerCore({
 //   pairs: [uniswapDai],
 // });
 
+
+const theme = {
+  background: '#282325',
+  titleFont: '"workSans", sans-serif',
+  paperBackground: '#282325',
+  accentColor: '#E84441',
+  homeButtonColor: '#BBBBBB',
+};
+
 const BurnerWallet = () =>
   <BurnerUI
-    title="Daedalus Industries"
+    title="daedalus industries"
     core={core}
     // assets={[
       // new NativeAsset({ id: 'geth', name: 'gETH', network: '5777' }),
@@ -44,6 +53,7 @@ const BurnerWallet = () =>
       new DaedalusPlugin({ assetId: 'kdai', contractAddress: '0x6f31E366f5A009F29C3e2d37b2268979624a6C66', network: '42' }),
       // new DaedalusPlugin({ assetId: 'tdai', contractAddress: '0x0ACf5Ab7B4a80DEe293cC8DdE06b29C5798e2A72', network: '5777' }),
     ]}
+    theme={theme}
   />
 
 ReactDOM.render(<BurnerWallet />, document.getElementById('root'));
