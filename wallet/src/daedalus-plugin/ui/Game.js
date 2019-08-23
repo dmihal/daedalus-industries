@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const STAKE_AMOUNT = '20000000000000000000';
+const STAKE_AMOUNT = '2000000000000000000';
 
 const StakeAmount = ({ amount }) => (
   <div className="BalanceRow_balanceRow__2DRQd">
@@ -11,12 +11,12 @@ const StakeAmount = ({ amount }) => (
 
 const KeyFilled = () => (
   <svg style={{ width: 48, height: 48 }} viewBox="0 0 24 24">
-    <path fill="#000000" d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7,6A6,6 0 0,0 1,12A6,6 0 0,0 7,18C9.61,18 11.83,16.33 12.65,14H17V18H21V14H23V10H12.65Z" />
+    <path fill="#fbfbfb" d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7,6A6,6 0 0,0 1,12A6,6 0 0,0 7,18C9.61,18 11.83,16.33 12.65,14H17V18H21V14H23V10H12.65Z" />
   </svg>
 );
 const KeyOutline = () => (
   <svg style={{ width: 48, height: 48 }} viewBox="0 0 24 24">
-    <path fill="#000000" d="M22,19H16V15H13.32C12.18,17.42 9.72,19 7,19C3.14,19 0,15.86 0,12C0,8.14 3.14,5 7,5C9.72,5 12.17,6.58 13.32,9H24V15H22V19M18,17H20V13H22V11H11.94L11.71,10.33C11,8.34 9.11,7 7,7A5,5 0 0,0 2,12A5,5 0 0,0 7,17C9.11,17 11,15.66 11.71,13.67L11.94,13H18V17M7,15A3,3 0 0,1 4,12A3,3 0 0,1 7,9A3,3 0 0,1 10,12A3,3 0 0,1 7,15M7,11A1,1 0 0,0 6,12A1,1 0 0,0 7,13A1,1 0 0,0 8,12A1,1 0 0,0 7,11Z" />
+    <path fill="#fbfbfb" d="M22,19H16V15H13.32C12.18,17.42 9.72,19 7,19C3.14,19 0,15.86 0,12C0,8.14 3.14,5 7,5C9.72,5 12.17,6.58 13.32,9H24V15H22V19M18,17H20V13H22V11H11.94L11.71,10.33C11,8.34 9.11,7 7,7A5,5 0 0,0 2,12A5,5 0 0,0 7,17C9.11,17 11,15.66 11.71,13.67L11.94,13H18V17M7,15A3,3 0 0,1 4,12A3,3 0 0,1 7,9A3,3 0 0,1 10,12A3,3 0 0,1 7,15M7,11A1,1 0 0,0 6,12A1,1 0 0,0 7,13A1,1 0 0,0 8,12A1,1 0 0,0 7,11Z" />
   </svg>
 );
 
@@ -153,19 +153,20 @@ export default class Game extends Component {
     }
 
     const { Button, AccountBalance } = burnerComponents;
+    const stakeAmt = plugin.getWeb3().utils.fromWei(STAKE_AMOUNT, 'ether');
 
     if (status === 'unstaked') {
       return (
         <div>
-          <div>You must stake 20 Dai to start</div>
+          <div>You must stake {stakeAmt} Dai to start</div>
           <AccountBalance
             asset={plugin.assetId}
             account={accounts[0]}
             render={(err, balance) => (
-              balance < 20 ? (
-                <div>Add 20 Dai to unlock staking</div>
+              balance < parseFloat(stakeAmt) ? (
+                <div>Add {stakeAmt} Dai to unlock staking</div>
               ) : (
-                <Button onClick={() => this.stake()}>Stake 20 Dai</Button>
+                <Button onClick={() => this.stake()}>Stake {stakeAmt} Dai</Button>
               )
             )}
           />
@@ -215,6 +216,7 @@ export default class Game extends Component {
                 min="0"
                 placeholder="10 Dai"
                 disabled={sendingHint}
+                style={{ fontSize: '18px' }}
               />
               <Button onClick={() => this.requestHint()} disabled={hintAmount === ''}>Send to Eve</Button>
             </div>

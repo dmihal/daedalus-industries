@@ -1064,10 +1064,10 @@
     react-qr-reader "^2.2.1"
     react-router-dom "^5.0.1"
 
-"@burner-wallet/ui@^0.0.29":
-  version "0.0.29"
-  resolved "https://registry.yarnpkg.com/@burner-wallet/ui/-/ui-0.0.29.tgz#4284427dae39d8ad8d1eb498e878f29ebcf8c9c6"
-  integrity sha512-fY+bvC2YP+MhkQl2ruueiWOG5y0vR1Orz39c0YYFtgYbkyK00dkqI8c0Pje20KAamG6wTkARGbrTIdS8YtFS6w==
+"@burner-wallet/ui@^0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/@burner-wallet/ui/-/ui-0.0.31.tgz#efb12b1715dd6dd9726208ca72db15210ec053a9"
+  integrity sha512-/1a/gRljUs0iKxOWBazfQ5v4pWaYSTJqpBjyWsqK+B6OfSXiJGgAKxMuyfB9O4JzO1LDBwF8cAfUItTr2Ev1LQ==
   dependencies:
     "@burner-wallet/assets" "0.0.17"
     "@burner-wallet/core" "0.0.19"
