@@ -1,9 +1,8 @@
 import puzzleABI from './abi/Puzzle.json';
+import Advanced from './ui/Advanced';
 import DiscoverCluePage from './ui/DiscoverCluePage';
-import AccountStatus from './ui/AccountStatus';
 import SecretPhrasePage from './ui/SecretPhrasePage';
 import Game from './ui/Game';
-import Bridge from './Bridge';
 
 export default class DaedalusPlugin {
   constructor({ assetId, contractAddress, network }) {
@@ -19,11 +18,8 @@ export default class DaedalusPlugin {
 
     pluginContext.addPage('/secret', SecretPhrasePage);
     pluginContext.addPage('/discover/:pk', DiscoverCluePage);
-    pluginContext.addElement('home-top', AccountStatus);
     pluginContext.addElement('home-middle', Game);
-    pluginContext.addHomeButton('Secret Phrase', '/secret');
-
-    this.bridge = new Bridge();
+    pluginContext.addElement('advanced', Advanced);
   }
 
   getContract() {
@@ -63,5 +59,9 @@ export default class DaedalusPlugin {
   getStoredClue(index) {
     const clues = JSON.parse(localStorage.getItem('storedClues') || '{}');
     return clues[index];
+  }
+
+  clearStoredClues() {
+    localStorage.setItem('storedClues', '{}');
   }
 }
