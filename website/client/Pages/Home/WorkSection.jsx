@@ -38,10 +38,7 @@ const WorkSection = () => {
         <GridItem cs={12} sm={12} md={8}>
           <h2 className={classes.title}>Work with us</h2>
           <h4 className={classes.description}>
-            Divide details about your product or agency work into parts. Write
-            a few lines about each one and contact us about any further
-            collaboration. We will responde get back to you in a couple of
-            hours.
+          Leave us a message if you would like to speak. We will find you.
           </h4>
           <form>
             <GridContainer>
@@ -56,7 +53,7 @@ const WorkSection = () => {
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
-                  labelText="Your Email"
+                  labelText="Your Telegram, Riot, or Twitter handle"
                   id="email"
                   formControlProps={{
                     fullWidth: true
