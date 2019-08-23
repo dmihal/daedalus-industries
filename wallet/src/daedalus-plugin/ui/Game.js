@@ -29,6 +29,8 @@ export default class Game extends Component {
       clueStatus: {},
       staked: '0',
       hintAmount: '',
+      showHint: false,
+      sendingHint: false,
     }
   }
 
@@ -115,10 +117,11 @@ export default class Game extends Component {
 
   async requestHint() {
     const { plugin, accounts } = this.props;
+    this.setState({ sendingHint: true });
     const amount = plugin.getWeb3().utils.toWei(this.state.hintAmount, 'ether');
     await plugin.getContract().methods.donate(amount).send({ from: accounts[0] });
-    this.setState({ hintAmount: '' });
-    this.updateGameStatus();
+    await this.updateGameStatus();
+    this.setState({ sendingHint: false, showHint: false, hintAmount: '' });
   }
 
   async donate() {
@@ -143,7 +146,7 @@ export default class Game extends Component {
 
   render() {
     const { accounts, burnerComponents, plugin } = this.props;
-    const { status, clueStatus, numClues, staked, hintAmount } = this.state;
+    const { status, clueStatus, numClues, staked, hintAmount, sendingHint, showHint } = this.state;
 
     if (accounts.length === 0) {
       return null;
@@ -193,23 +196,37 @@ export default class Game extends Component {
       return (
         <div>
           <StakeAmount amount={staked}/>
-          <div style={{ display: 'flex'  }}>
+
+          <div style={{ marginTop: '12px' }}>Keys Unlocked: {Object.keys(clueStatus).length}/{numClues}</div>
+          <div style={{ display: 'flex' }}>
             {[...Array(numClues).keys()].map(i => (
               <div key={`clue${i + 1}`} style={{ padding: 12 }}>
                 {clueStatus[i + 1] ? <KeyFilled /> : <KeyOutline />}
               </div>
             ))}
           </div>
-          <Button onClick={() => this.props.actions.navigateTo('/secret')}>Secret Phrase</Button>
-          <div style={{ display: 'flex' }}>
-            <input
-              type="number"
-              value={hintAmount}
-              onChange={e => this.setState({ hintAmount: e.target.value })}
-              min="0"
-              placeholder="10 Dai"
-            />
-            <Button onClick={() => this.requestHint()} disabled={hintAmount === ''}>Send to Eve</Button>
+
+          {showHint && (
+            <div style={{ display: 'flex' }}>
+              <input
+                type="number"
+                value={hintAmount}
+                onChange={e => this.setState({ hintAmount: e.target.value })}
+                min="0"
+                placeholder="10 Dai"
+                disabled={sendingHint}
+              />
+              <Button onClick={() => this.requestHint()} disabled={hintAmount === ''}>Send to Eve</Button>
+            </div>
+          )}
+
+          <div>
+            <div>
+              <Button onClick={() => this.setState({ showHint: !showHint })}>Hint</Button>
+            </div>
+            <div>
+              <Button onClick={() => this.props.actions.navigateTo('/secret')}>Secret Phrase</Button>
+            </div>
           </div>
         </div>
       );
