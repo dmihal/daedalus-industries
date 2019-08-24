@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const STAKE_AMOUNT = '2000000000000000000';
+const STAKE_AMOUNT = '16000000000000000000';
 
 const StakeAmount = ({ amount }) => (
   <div className="BalanceRow_balanceRow__2DRQd">
@@ -124,6 +124,11 @@ export default class Game extends Component {
     this.setState({ sendingHint: false, showHint: false, hintAmount: '' });
   }
 
+  async promptDonate() {
+    await this.props.actions.scanQrCode();
+    this.donate();
+  }
+
   async donate() {
     const { plugin, accounts } = this.props;
     const contract = plugin.getContract();
@@ -133,6 +138,12 @@ export default class Game extends Component {
     const remaining = await contract.methods.remainingStake(accounts[0]).call();
     await contract.methods.findCluesAndDonate(clues, vs, rs, ss, remaining).send({ from: accounts[0] });
     this.setState({ status: 'complete' });
+  }
+
+
+  async promptRedeem() {
+    await this.props.actions.scanQrCode();
+    this.redeem();
   }
 
   async redeem() {
@@ -239,8 +250,8 @@ export default class Game extends Component {
         <div>
           <StakeAmount amount={staked}/>
           <div>All clues unlocked</div>
-          <Button onClick={() => this.donate()}>Donate</Button>
-          <Button onClick={() => this.redeem()}>Redeem</Button>
+          <Button onClick={() => this.promptDonate()}>Donate</Button>
+          <Button onClick={() => this.promptRedeem()}>Redeem</Button>
         </div>
       );
     }
